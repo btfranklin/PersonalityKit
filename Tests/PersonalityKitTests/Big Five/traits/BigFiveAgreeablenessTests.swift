@@ -6,15 +6,15 @@ import XCTest
 final class BigFiveAgreeablenessTests: XCTestCase {
     
     func testInitializer() {
-        let testTrait1 = BigFiveAgreeableness(compassionScore: 1.0,
-                                              respectfulnessScore: 1.0,
-                                              trustScore: 1.0)
-        XCTAssertEqual(1.0, testTrait1.score, accuracy: 0)
+        let testTrait1 = BigFiveAgreeableness(compassionScore: unitRange.upperBound,
+                                              respectfulnessScore: unitRange.upperBound,
+                                              trustScore: unitRange.upperBound)
+        XCTAssertEqual(unitRange.upperBound, testTrait1.score, accuracy: 0)
         
-        let testTrait2 = BigFiveAgreeableness(compassionScore: 0,
-                                              respectfulnessScore: 0,
-                                              trustScore: 0)
-        XCTAssertEqual(0, testTrait2.score, accuracy: 0)
+        let testTrait2 = BigFiveAgreeableness(compassionScore: unitRange.lowerBound,
+                                              respectfulnessScore: unitRange.lowerBound,
+                                              trustScore: unitRange.lowerBound)
+        XCTAssertEqual(unitRange.lowerBound, testTrait2.score, accuracy: 0)
 
         let testTrait3 = BigFiveAgreeableness(compassionScore: 0.5,
                                               respectfulnessScore: 0.5,

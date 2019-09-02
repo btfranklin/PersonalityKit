@@ -6,15 +6,15 @@ import XCTest
 final class BigFiveNeuroticismTests: XCTestCase {
     
     func testInitializer() {
-        let testTrait1 = BigFiveNeuroticism(anxietyScore: 1.0,
-                                            emotionalVolatilityScore: 1.0,
-                                            depressionScore: 1.0)
-        XCTAssertEqual(1.0, testTrait1.score, accuracy: 0)
+        let testTrait1 = BigFiveNeuroticism(anxietyScore: unitRange.upperBound,
+                                            emotionalVolatilityScore: unitRange.upperBound,
+                                            depressionScore: unitRange.upperBound)
+        XCTAssertEqual(unitRange.upperBound, testTrait1.score, accuracy: 0)
         
-        let testTrait2 = BigFiveNeuroticism(anxietyScore: 0,
-                                            emotionalVolatilityScore: 0,
-                                            depressionScore: 0)
-        XCTAssertEqual(0, testTrait2.score, accuracy: 0)
+        let testTrait2 = BigFiveNeuroticism(anxietyScore: unitRange.lowerBound,
+                                            emotionalVolatilityScore: unitRange.lowerBound,
+                                            depressionScore: unitRange.lowerBound)
+        XCTAssertEqual(unitRange.lowerBound, testTrait2.score, accuracy: 0)
 
         let testTrait3 = BigFiveNeuroticism(anxietyScore: 0.5,
                                             emotionalVolatilityScore: 0.5,

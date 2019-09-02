@@ -6,15 +6,15 @@ import XCTest
 final class BigFiveConscientiousnessTests: XCTestCase {
     
     func testInitializer() {
-        let testTrait1 = BigFiveConscientiousness(organizationScore: 1.0,
-                                                  responsibilityScore: 1.0,
-                                                  productivityScore: 1.0)
-        XCTAssertEqual(1.0, testTrait1.score, accuracy: 0)
+        let testTrait1 = BigFiveConscientiousness(organizationScore: unitRange.upperBound,
+                                                  responsibilityScore: unitRange.upperBound,
+                                                  productivityScore: unitRange.upperBound)
+        XCTAssertEqual(unitRange.upperBound, testTrait1.score, accuracy: 0)
         
-        let testTrait2 = BigFiveConscientiousness(organizationScore: 0,
-                                                  responsibilityScore: 0,
-                                                  productivityScore: 0)
-        XCTAssertEqual(0, testTrait2.score, accuracy: 0)
+        let testTrait2 = BigFiveConscientiousness(organizationScore: unitRange.lowerBound,
+                                                  responsibilityScore: unitRange.lowerBound,
+                                                  productivityScore: unitRange.lowerBound)
+        XCTAssertEqual(unitRange.lowerBound, testTrait2.score, accuracy: 0)
 
         let testTrait3 = BigFiveConscientiousness(organizationScore: 0.5,
                                                   responsibilityScore: 0.5,

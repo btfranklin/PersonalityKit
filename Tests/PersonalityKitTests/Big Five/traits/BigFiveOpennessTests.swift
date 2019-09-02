@@ -6,15 +6,15 @@ import XCTest
 final class BigFiveOpennessTests: XCTestCase {
     
     func testInitializer() {
-        let testTrait1 = BigFiveOpenness(aestheticSensitivityScore: 1.0,
-                                         creativeImaginationScore: 1.0,
-                                         intellectualCuriosityScore: 1.0)
-        XCTAssertEqual(1.0, testTrait1.score, accuracy: 0)
+        let testTrait1 = BigFiveOpenness(aestheticSensitivityScore: unitRange.upperBound,
+                                         creativeImaginationScore: unitRange.upperBound,
+                                         intellectualCuriosityScore: unitRange.upperBound)
+        XCTAssertEqual(unitRange.upperBound, testTrait1.score, accuracy: 0)
         
-        let testTrait2 = BigFiveOpenness(aestheticSensitivityScore: 0,
-                                         creativeImaginationScore: 0,
-                                         intellectualCuriosityScore: 0)
-        XCTAssertEqual(0, testTrait2.score, accuracy: 0)
+        let testTrait2 = BigFiveOpenness(aestheticSensitivityScore: unitRange.lowerBound,
+                                         creativeImaginationScore: unitRange.lowerBound,
+                                         intellectualCuriosityScore: unitRange.lowerBound)
+        XCTAssertEqual(unitRange.lowerBound, testTrait2.score, accuracy: 0)
 
         let testTrait3 = BigFiveOpenness(aestheticSensitivityScore: 0.5,
                                          creativeImaginationScore: 0.5,
