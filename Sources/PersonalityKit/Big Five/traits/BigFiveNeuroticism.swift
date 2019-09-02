@@ -22,7 +22,7 @@ public struct BigFiveNeuroticism: BigFivePersonalityTrait {
         self.emotionalVolatilityScore = emotionalVolatilityScore
         self.depressionScore = depressionScore
         
-        self.score = (0.34 * anxietyScore) + (0.33 * emotionalVolatilityScore) + (0.33 * depressionScore)
+        self.score = (0.33334 * anxietyScore) + (0.33333 * emotionalVolatilityScore) + (0.33333 * depressionScore)
     }
 }
 

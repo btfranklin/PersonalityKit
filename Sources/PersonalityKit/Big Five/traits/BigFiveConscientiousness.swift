@@ -22,7 +22,7 @@ public struct BigFiveConscientiousness: BigFivePersonalityTrait {
         self.responsibilityScore = responsibilityScore
         self.productivityScore = productivityScore
         
-        self.score = (0.34 * organizationScore) + (0.33 * responsibilityScore) + (0.33 * productivityScore)
+        self.score = (0.33334 * organizationScore) + (0.33333 * responsibilityScore) + (0.33333 * productivityScore)
     }
 }
 

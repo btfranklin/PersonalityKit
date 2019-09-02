@@ -22,7 +22,7 @@ public struct BigFiveExtraversion: BigFivePersonalityTrait {
         self.sociabilityScore = sociabilityScore
         self.energyLevelScore = energyLevelScore
         
-        self.score = (0.34 * assertivenessScore) + (0.33 * sociabilityScore) + (0.33 * energyLevelScore)
+        self.score = (0.33334 * assertivenessScore) + (0.33333 * sociabilityScore) + (0.33333 * energyLevelScore)
     }
 }
 

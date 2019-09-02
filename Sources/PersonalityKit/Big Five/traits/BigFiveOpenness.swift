@@ -22,7 +22,7 @@ public struct BigFiveOpenness: BigFivePersonalityTrait {
         self.creativeImaginationScore = creativeImaginationScore
         self.intellectualCuriosityScore = intellectualCuriosityScore
         
-        self.score = (0.34 * aestheticSensitivityScore) + (0.33 * creativeImaginationScore) + (0.33 * intellectualCuriosityScore)
+        self.score = (0.33334 * aestheticSensitivityScore) + (0.33333 * creativeImaginationScore) + (0.33333 * intellectualCuriosityScore)
     }
 }
 

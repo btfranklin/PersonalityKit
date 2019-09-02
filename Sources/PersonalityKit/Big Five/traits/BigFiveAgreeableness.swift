@@ -24,7 +24,7 @@ public struct BigFiveAgreeableness: BigFivePersonalityTrait {
         self.respectfulnessScore = respectfulnessScore
         self.trustScore = trustScore
         
-        self.score = (0.34 * compassionScore) + (0.33 * respectfulnessScore) + (0.33 * trustScore)
+        self.score = (0.33334 * compassionScore) + (0.33333 * respectfulnessScore) + (0.33333 * trustScore)
     }
 }
 
