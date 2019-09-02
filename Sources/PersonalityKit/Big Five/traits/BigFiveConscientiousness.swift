@@ -1,5 +1,7 @@
 //  Created by B.T. Franklin on 8/24/19
 
+import DunesailerUtilities
+
 public struct BigFiveConscientiousness: BigFivePersonalityTrait {
     
     public let score: Double
