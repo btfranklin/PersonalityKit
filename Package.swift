@@ -14,7 +14,7 @@ let package = Package(
             targets: ["PersonalityKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/dunesailer/Utilities.git", from: "0.4.0"),
+        .package(url: "https://github.com/dunesailer/Utilities.git", from: "0.4.1"),
     ],
     targets: [
         .target(
