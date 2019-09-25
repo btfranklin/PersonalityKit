@@ -1,5 +1,6 @@
 //  Created by B.T. Franklin on 8/24/19
 
+import Foundation
 import DunesailerUtilities
 
 public struct BigFiveConscientiousness: BigFivePersonalityTrait {
@@ -74,5 +75,14 @@ extension BigFiveConscientiousness {
         }
 
         return conscientiousness
+    }
+}
+
+extension BigFiveConscientiousness: CustomStringConvertible {
+    public var description: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumSignificantDigits = 2
+        return "\(formatter.string(for: score)!) {O:\(formatter.string(for: organizationScore)!) R:\(formatter.string(for: responsibilityScore)!) P:\(formatter.string(for: productivityScore)!)}"
     }
 }

@@ -1,5 +1,6 @@
 //  Created by B.T. Franklin on 8/24/19
 
+import Foundation
 import DunesailerUtilities
 
 public struct BigFiveNeuroticism: BigFivePersonalityTrait {
@@ -74,5 +75,14 @@ extension BigFiveNeuroticism {
         }
 
         return neuroticism
+    }
+}
+
+extension BigFiveNeuroticism: CustomStringConvertible {
+    public var description: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumSignificantDigits = 2
+        return "\(formatter.string(for: score)!) {A:\(formatter.string(for: anxietyScore)!) E:\(formatter.string(for: emotionalVolatilityScore)!) D:\(formatter.string(for: depressionScore)!)}"
     }
 }

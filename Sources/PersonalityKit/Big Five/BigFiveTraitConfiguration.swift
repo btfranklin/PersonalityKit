@@ -43,3 +43,15 @@ extension BigFiveTraitConfiguration {
                                         neuroticism: neuroticism)
     }
 }
+
+extension BigFiveTraitConfiguration: CustomStringConvertible {
+    public var description: String {
+        return """
+            openness: \(openness)
+            conscientiousness: \(conscientiousness)
+            extraversion: \(extraversion)
+            agreeableness: \(agreeableness)
+            neuroticism: \(neuroticism)
+        """
+    }
+}

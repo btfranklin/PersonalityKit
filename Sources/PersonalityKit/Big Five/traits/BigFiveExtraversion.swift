@@ -1,5 +1,6 @@
 //  Created by B.T. Franklin on 8/24/19
 
+import Foundation
 import DunesailerUtilities
 
 public struct BigFiveExtraversion: BigFivePersonalityTrait {
@@ -74,5 +75,14 @@ extension BigFiveExtraversion {
         }
         
         return extraversion
+    }
+}
+
+extension BigFiveExtraversion: CustomStringConvertible {
+    public var description: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumSignificantDigits = 2
+        return "\(formatter.string(for: score)!) {A:\(formatter.string(for: assertivenessScore)!) S:\(formatter.string(for: sociabilityScore)!) E:\(formatter.string(for: energyLevelScore)!)}"
     }
 }

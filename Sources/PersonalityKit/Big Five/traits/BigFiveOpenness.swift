@@ -1,5 +1,6 @@
 //  Created by B.T. Franklin on 8/24/19
 
+import Foundation
 import DunesailerUtilities
 
 public struct BigFiveOpenness: BigFivePersonalityTrait {
@@ -76,3 +77,13 @@ extension BigFiveOpenness {
         return openness
     }
 }
+
+extension BigFiveOpenness: CustomStringConvertible {
+    public var description: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumSignificantDigits = 2
+        return "\(formatter.string(for: score)!) {A:\(formatter.string(for: aestheticSensitivityScore)!) C:\(formatter.string(for: creativeImaginationScore)!) I:\(formatter.string(for: intellectualCuriosityScore)!)}"
+    }
+}
+

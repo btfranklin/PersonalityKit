@@ -1,5 +1,6 @@
 //  Created by B.T. Franklin on 8/24/19
 
+import Foundation
 import DunesailerUtilities
 
 public struct BigFiveAgreeableness: BigFivePersonalityTrait {
@@ -73,5 +74,14 @@ extension BigFiveAgreeableness {
                                                                                    withMinimum: 0.01))
         }
         return agreeableness
+    }
+}
+
+extension BigFiveAgreeableness: CustomStringConvertible {
+    public var description: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumSignificantDigits = 2
+        return "\(formatter.string(for: score)!) {C:\(formatter.string(for: compassionScore)!) R:\(formatter.string(for: respectfulnessScore)!) T:\(formatter.string(for: trustScore)!)}"
     }
 }
