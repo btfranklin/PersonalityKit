@@ -12,8 +12,8 @@ public struct BigFiveConflictResolutionConfiguration {
 }
 
 extension BigFiveConflictResolutionConfiguration {
-    public static func random(for traitConfiguration: BigFiveTraitConfiguration, and gender: Gender) -> BigFiveConflictResolutionConfiguration {
-        let conflictResolutionStyle = BigFiveConflictResolutionStyle.random(for: traitConfiguration, ofGender: gender)
+    public static func random(for traitConfiguration: BigFiveTraitConfiguration) -> BigFiveConflictResolutionConfiguration {
+        let conflictResolutionStyle = BigFiveConflictResolutionStyle.random(for: traitConfiguration)
         
         let concernForSelf: PriorityLevel
         let concernForOthers: PriorityLevel

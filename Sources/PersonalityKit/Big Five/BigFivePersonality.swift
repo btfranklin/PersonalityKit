@@ -12,7 +12,7 @@ public struct BigFivePersonality {
 extension BigFivePersonality {
     public static func random(for lifeStage: LifeStage, ofGender gender: Gender) -> BigFivePersonality {
         let traitConfiguration = BigFiveTraitConfiguration.random(for: lifeStage, ofGender: gender)
-        let conflictResolutionConfiguration = BigFiveConflictResolutionConfiguration.random(for: traitConfiguration, and: gender)
+        let conflictResolutionConfiguration = BigFiveConflictResolutionConfiguration.random(for: traitConfiguration)
         
         return BigFivePersonality(traitConfiguration: traitConfiguration,
                                   conflictResolutionConfiguration: conflictResolutionConfiguration)

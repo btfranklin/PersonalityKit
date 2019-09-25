@@ -37,59 +37,48 @@ public enum BigFiveConflictResolutionStyle {
 
 extension BigFiveConflictResolutionStyle {
     
-    public static func random(for traitConfiguration: BigFiveTraitConfiguration, ofGender gender: Gender) -> BigFiveConflictResolutionStyle {
+    public static func random(for traitConfiguration: BigFiveTraitConfiguration) -> BigFiveConflictResolutionStyle {
         
         var styleLevels = [BigFiveConflictResolutionStyle:Double]()
         
         /*
-         Values based roughly on research presented here:
+         These values are all based very loosely on the research findings presented here:
          Priyadarshini, S. (2017). Effect of Personality on Conflict Resolution Styles. IRA-International
          Journal of Management & Social Sciences (ISSN 2455-2267), 7(2), 196-207.
          */
-        if gender == .male {
-            styleLevels[.avoiding] = Double.randomGaussian(withStandardDeviation: 5, withMean: 25, withMinimum: 0)
-            styleLevels[.obliging] = Double.randomGaussian(withStandardDeviation: 5, withMean: 25, withMinimum: 0)
-            styleLevels[.integrating] = Double.randomGaussian(withStandardDeviation: 5, withMean: 25, withMinimum: 0)
-            styleLevels[.dominating] = Double.randomGaussian(withStandardDeviation: 5, withMean: 25, withMinimum: 0)
-            styleLevels[.compromising] = Double.randomGaussian(withStandardDeviation: 4, withMean: 25, withMinimum: 0)
-            
-        } else {
-            styleLevels[.avoiding] = Double.randomGaussian(withStandardDeviation: 5, withMean: 25, withMinimum: 0)
-            styleLevels[.obliging] = Double.randomGaussian(withStandardDeviation: 5, withMean: 25, withMinimum: 0)
-            styleLevels[.integrating] = Double.randomGaussian(withStandardDeviation: 5, withMean: 25, withMinimum: 0)
-            styleLevels[.dominating] = Double.randomGaussian(withStandardDeviation: 5, withMean: 23, withMinimum: 0)
-            styleLevels[.compromising] = Double.randomGaussian(withStandardDeviation: 5, withMean: 27, withMinimum: 0)
-        }
-        
-        styleLevels[.avoiding] = styleLevels[.avoiding]!
-                + traitConfiguration.neuroticism.score * 0.7
+        styleLevels[.avoiding] = traitConfiguration.neuroticism.score * 0.7
                 + traitConfiguration.openness.score * -0.1
                 + traitConfiguration.agreeableness.score * 0.2
                 + traitConfiguration.conscientiousness.score * -0.2
         
-        styleLevels[.obliging] = styleLevels[.obliging]!
-                + traitConfiguration.neuroticism.score * 0.2
+        styleLevels[.obliging] = traitConfiguration.neuroticism.score * 0.2
                 + traitConfiguration.extraversion.score * -0.2
                 + traitConfiguration.openness.score * -0.1
                 + traitConfiguration.agreeableness.score * 0.3
         
-        styleLevels[.integrating] = styleLevels[.integrating]!
-                + traitConfiguration.openness.score * 0.2
+        styleLevels[.integrating] = traitConfiguration.openness.score * 0.1
                 + traitConfiguration.agreeableness.score * 0.2
-                + traitConfiguration.conscientiousness.score * 0.2
+                + traitConfiguration.conscientiousness.score * 0.1
 
-        styleLevels[.dominating] = styleLevels[.dominating]!
-                + traitConfiguration.neuroticism.score * -0.2
+        styleLevels[.dominating] = traitConfiguration.neuroticism.score * -0.2
                 + traitConfiguration.extraversion.score * 0.2
                 + traitConfiguration.openness.score * -0.2
                 + traitConfiguration.agreeableness.score * -0.4
                 + traitConfiguration.conscientiousness.score * 0.2
 
-        styleLevels[.compromising] = styleLevels[.compromising]!
-                + traitConfiguration.neuroticism.score * 0.1
+        styleLevels[.compromising] = traitConfiguration.neuroticism.score * 0.1
                 + traitConfiguration.extraversion.score * 0.1
                 + traitConfiguration.conscientiousness.score * -0.2
-                
+
+        // Options with higher levels will have a greater chance of becoming the selected style.
+        // Styles with negative levels are treated as if they have a 0.1, so there's a small chance
+        // of selecting even the most counter-indicated style.
+        styleLevels[.avoiding] = Double.random(in: 0.0...max(styleLevels[.avoiding]!,0.1))
+        styleLevels[.obliging] = Double.random(in: 0.0...max(styleLevels[.obliging]!,0.1))
+        styleLevels[.integrating] = Double.random(in: 0.0...max(styleLevels[.integrating]!,0.1))
+        styleLevels[.dominating] = Double.random(in: 0.0...max(styleLevels[.dominating]!,0.1))
+        styleLevels[.compromising] = Double.random(in: 0.0...max(styleLevels[.compromising]!,0.1))
+
         let styleLevelsTupleArray = styleLevels.sorted{ $0.value > $1.value }
         return styleLevelsTupleArray.first!.key
     }
