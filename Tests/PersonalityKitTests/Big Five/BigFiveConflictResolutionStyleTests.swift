@@ -7,7 +7,7 @@ final class BigFiveConflictResolutionStyleTests: XCTestCase {
     
     func testRandom() {
         let testConfiguration = BigFiveTraitConfiguration.random(for: .adult, ofGender: .male)
-        print(testConfiguration1)
+        print(testConfiguration)
         var buckets: [BigFiveConflictResolutionStyle:Int] = [
             .avoiding: 0,
             .obliging: 0,
@@ -16,7 +16,7 @@ final class BigFiveConflictResolutionStyleTests: XCTestCase {
             .compromising: 0
         ]
         for _ in 0...100 {
-            let style = BigFiveConflictResolutionStyle.random(for: testConfiguration1)
+            let style = BigFiveConflictResolutionStyle.random(for: testConfiguration)
             buckets[style] = buckets[style]!+1
         }
         print(buckets)
