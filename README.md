@@ -13,9 +13,9 @@ The PersonalityKit package is a standard Swift package, and can easily be added 
 
 To include PersonalityKit in another Swift Package Manager package, add it to the `dependencies` attribute defined in your `Package.swift` file. You can select the version using the `from` parameter. For example:
 ```
-	dependencies: [
-		.package(url: "https://github.com/dunesailer/PersonalityKit.git", from: "0.1.0")
-	]
+dependencies: [
+	.package(url: "https://github.com/dunesailer/PersonalityKit.git", from: "0.1.0")
+]
 ```
 
 
