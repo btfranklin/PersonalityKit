@@ -28,7 +28,7 @@ public struct BigFiveTraitConfiguration {
 }
 
 extension BigFiveTraitConfiguration {
-    public static func random(for lifeStage: LifeStage, ofGender gender: Gender) -> BigFiveTraitConfiguration {
+    public static func random(for lifeStage: LifeStage, ofGender gender: BinaryGender) -> BigFiveTraitConfiguration {
         
         let openness = BigFiveOpenness.random(for: lifeStage)
         let conscientiousness = BigFiveConscientiousness.random(for: lifeStage)
