@@ -39,7 +39,7 @@ extension BigFiveConflictResolutionStyle {
     
     public static func random(for traitConfiguration: BigFiveTraitConfiguration) -> BigFiveConflictResolutionStyle {
         
-        var styleLevels = [BigFiveConflictResolutionStyle:Double]()
+        var styleLevels: [BigFiveConflictResolutionStyle:Double] = [:]
         
         /*
          These values are all based very loosely on the research findings presented here:
