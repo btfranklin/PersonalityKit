@@ -3,7 +3,7 @@
 import Foundation
 import DunesailerUtilities
 
-public struct BigFiveOpenness: BigFivePersonalityTrait {
+public struct BigFiveOpenness: Scorable {
     
     public let score: Double
     
