@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "PersonalityKit",
     platforms: [
-        .macOS(.v10_15), .iOS(.v13),
+        .macOS(.v11), .iOS(.v14), .tvOS(.v14), .watchOS(.v7)
     ],
     products: [
         .library(
@@ -14,13 +14,15 @@ let package = Package(
             targets: ["PersonalityKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/dunesailer/Utilities.git",
+        .package(name: "Dunesailer Utilities",
+                 url: "https://github.com/dunesailer/Utilities.git",
                  from: "2.0.6"),
     ],
     targets: [
         .target(
             name: "PersonalityKit",
-            dependencies: ["DunesailerUtilities"]),
+            dependencies: [.product(name: "DunesailerUtilities",
+                                    package: "Dunesailer Utilities")]),
         .testTarget(
             name: "PersonalityKitTests",
             dependencies: ["PersonalityKit"]),
