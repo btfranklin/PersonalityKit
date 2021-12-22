@@ -1,7 +1,5 @@
 //  Created by B.T. Franklin on 9/23/19
 
-import DunesailerUtilities
-
 public struct BigFivePersonality {
     
     public let traitConfiguration: BigFiveTraitConfiguration

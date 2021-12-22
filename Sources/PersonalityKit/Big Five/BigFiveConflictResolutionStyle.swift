@@ -1,7 +1,5 @@
 //  Created by B.T. Franklin on 9/22/19
 
-import DunesailerUtilities
-
 public enum BigFiveConflictResolutionStyle {
     
     // Avoiding

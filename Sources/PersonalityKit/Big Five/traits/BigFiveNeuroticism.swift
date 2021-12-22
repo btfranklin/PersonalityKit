@@ -1,7 +1,6 @@
 //  Created by B.T. Franklin on 8/24/19
 
 import Foundation
-import DunesailerUtilities
 
 public struct BigFiveNeuroticism: Scorable {
     

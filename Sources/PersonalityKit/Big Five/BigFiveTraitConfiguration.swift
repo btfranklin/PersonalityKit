@@ -1,7 +1,5 @@
 //  Created by B.T. Franklin on 8/23/19
 
-import DunesailerUtilities
-
 public struct BigFiveTraitConfiguration {
     
     // appreciation for art, emotion, adventure, unusual ideas, imagination, curiosity, and variety of experience
