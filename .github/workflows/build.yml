@@ -2,14 +2,14 @@ name: build
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
 
-    runs-on: macos-11
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
